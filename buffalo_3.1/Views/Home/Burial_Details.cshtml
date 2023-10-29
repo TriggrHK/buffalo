@@ -1,0 +1,188 @@
+﻿@{
+    ViewData["Title"] = "Burial Details";
+}
+@model Master
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center background-1">
+        <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+            <h2>Burial Details</h2>
+            <ol>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li>Burial Details</li>
+            </ol>
+
+        </div>
+    </div><!-- End Breadcrumbs -->
+    <!-- ======= Projet Details Section ======= -->
+    <section id="project-details" class="project-details">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row justify-content-between gy-4 mt-4">
+
+                <div class="col-lg-8">
+
+@*
+                    <div class="portfolio-description">
+                        <h2>Burial Id: @Model.Id</h2>
+                        <p>Text: @Model.Text</p>
+                        <p>Burial Number: @Model.Burialnumber</p>
+                        <p>Location: N/S - @Model.Squarenorthsouth, E/W @Model.Squareeastwest</p>
+                        <p>Burial Depth: @Model.Depth</p>
+                        <p>Head Direction: @Model.Headdirection</p>
+                        <p>Sex: @Model.Sex</p>
+                        <p>N/S: @Model.Northsouth, E/W: @Model.Eastwest</p>
+                        <p>Adultsubadult: @Model.Adultsubadult</p>
+                        <p>Southtofeet: @Model.Southtofeet</p>
+                        <p>Preservation: @Model.Preservation</p>
+                        <p>Field Book Page: @Model.Fieldbookpage</p>
+                        <p>Wrapping: @Model.Wrapping</p>
+                        <p>Hair Color: @Model.Haircolor</p>
+                        <p>Westtohead: @Model.Westtohead</p>
+                        <p>Were samples collected: @Model.Samplescollected</p>
+                        <p>Quadrant Area: @Model.Area</p>
+                        <p>Length: @Model.Length</p>
+                        <p>Westtofeet: @Model.Westtofeet</p>
+                        <p>Age at Death: @Model.Ageatdeath</p>
+                        <p>Southtofeet: @Model.Southtofeet</p>
+                        <p>Field Book Excavation Year: @Model.Fieldbookexcavationyear</p>
+                        <p>Cluster Number: @Model.Clusternumber</p>
+                        <p>Structure Function: @Model.Structurefunction</p>
+                        <p>Textile Description: @Model.Description</p>
+                        <p>Textile Color: @Model.Color</p>
+                        <p>Textile Function: @Model.Textilefunction</p>
+                    </div>
+*@
+
+                    <div class="table-responsive">
+                        <h2>Burial Id: @Model.Id</h2>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <td>Text:</td>
+                                <td>@Model.Text</td>
+                            </tr>
+                            <tr>
+                                <td>Burial Number:</td>
+                                <td>@Model.Burialnumber</td>
+                            </tr>
+                            <tr>
+                                <td>Location:</td>
+                                <td>N/S - @Model.Squarenorthsouth, E/W @Model.Squareeastwest</td>
+                            </tr>
+                            <tr>
+                                <td>Burial Depth:</td>
+                                <td>@Model.Depth</td>
+                            </tr>
+                            <tr>
+                                <td>Head Direction:</td>
+                                <td>@Model.Headdirection</td>
+                            </tr>
+                            <tr>
+                                <td>Sex:</td>
+                                <td>@Model.Sex</td>
+                            </tr>
+                            <tr>
+                                <td>N/S:</td>
+                                <td>@Model.Northsouth, E/W: @Model.Eastwest</td>
+                            </tr>
+                            <tr>
+                                <td>Adultsubadult:</td>
+                                <td>@Model.Adultsubadult</td>
+                            </tr>
+                            <tr>
+                                <td>Southtofeet:</td>
+                                <td>@Model.Southtofeet</td>
+                            </tr>
+                            <tr>
+                                <td>Preservation:</td>
+                                <td>@Model.Preservation</td>
+                            </tr>
+                            <tr>
+                                <td>Field Book Page:</td>
+                                <td>@Model.Fieldbookpage</td>
+                            </tr>
+                            <tr>
+                                <td>Wrapping:</td>
+                                <td>@Model.Wrapping</td>
+                            </tr>
+                            <tr>
+                                <td>Hair Color:</td>
+                                <td>@Model.Haircolor</td>
+                            </tr>
+                            <tr>
+                                <td>Westtohead:</td>
+                                <td>@Model.Westtohead</td>
+                            </tr>
+                            <tr>
+                                <td>Were samples collected:</td>
+                                <td>@Model.Samplescollected</td>
+                            </tr>
+                            <tr>
+                                <td>Quadrant Area:</td>
+                                <td>@Model.Area</td>
+                            </tr>
+                            <tr>
+                                <td>Length:</td>
+                                <td>@Model.Length</td>
+                            </tr>
+                            <tr>
+                                <td>Westtofeet:</td>
+                                <td>@Model.Westtofeet</td>
+                            </tr>
+                            <tr>
+                                <td>Age at Death:</td>
+                                <td>@Model.Ageatdeath</td>
+                            </tr>
+                            <tr>
+                                <td>Southtofeet:</td>
+                                <td>@Model.Southtofeet</td>
+                            </tr>
+                            <tr>
+                                <td>Field Book Excavation Year:</td>
+                                <td>@Model.Fieldbookexcavationyear</td>
+                            </tr>
+                            <tr>
+                                <td>Cluster Number:</td>
+                                <td>@Model.Clusternumber</td>
+                            </tr>
+                            <tr>
+                                <td>Structure Function:</td>
+                                <td>@Model.Structurefunction</td>
+                            </tr>
+                            <tr>
+                                <td>Textile Description:</td>
+                                <td>@Model.Description</td>
+                            </tr>
+                            <tr>
+                                <td>Textile Color:</td>
+                                <td>@Model.Color</td>
+                            </tr>
+                            <tr>
+                                <td>Textile Function:</td>
+                                <td>@Model.Textilefunction</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- If a user is authenticated provide them with an edit and delete button -->
+                    <div class="m-3">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <a class="btn btn-warning mx-1" asp-controller="Home" asp-action="Edit" asp-route-burialId="@Model.Masterid">Edit</a>
+                            <a class="btn btn-danger" asp-controller="Home" asp-action="DeleteRecord" asp-route-burialId="@Model.Masterid">Delete</a>
+                        }
+                        else
+                        {
+                            <p>Log in to edit Burial Records</p>
+                        }
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Projet Details Section -->
+
+</main><!-- End #main -->

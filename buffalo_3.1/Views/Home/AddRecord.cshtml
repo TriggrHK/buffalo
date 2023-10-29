@@ -1,0 +1,214 @@
+﻿@{
+    ViewData["Title"] = "Add Records";
+}
+
+@model Master
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center background-1">
+        <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+            <h2>Add Records</h2>
+            <ol>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li>Add Records</li>
+            </ol>
+
+        </div>
+    </div><!-- End Breadcrumbs -->
+    <div class="container">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <form method="post">
+                <div class="form-group my-3">
+                    <div asp-validation-summary="All" id="validation"></div>
+                    <input class="form-control-sm" asp-for="Masterid" type="hidden" />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Text">Text</label>
+                    <input class="form-control-sm" asp-for="Text" /><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Adultsubadult">Adultsubadult</label>
+                    <select class="form-control-sm" asp-for="Adultsubadult">
+                            <option value="">---</option>
+                            <option value="A">Adult</option>
+                            <option value="C">Child (non adult)</option>
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Wrapping">Wrapping</label>
+                    <select class="form-control-sm" asp-for="Wrapping">
+                            <option value="">---</option>
+                            <option value="W">Wrapped</option>
+                            <option value="B">Bones</option>
+                            <option value="H">Half</option>
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Westtohead">Westtohead</label>
+                    <input class="form-control-sm" asp-for="Westtohead" type="number"/><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Length">Length</label>
+                    <input class="form-control-sm" asp-for="Length" type="number"/><br />
+                </div>
+                <div class="form-group my-3 form-control-sm">
+                    <label asp-for="Westtofeet">Westtofeet</label>
+                    <input class="form-control-sm" asp-for="Westtofeet" type="number"/><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Southtofeet">Southtofeet</label>
+                    <input class="form-control-sm" asp-for="Southtofeet" type="number"/><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Fieldbookexcavationyear">Fieldbookexcavationyear</label>
+                    <input class="form-control-sm" asp-for="Fieldbookexcavationyear" /><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Clusternumber">Clusternumber</label>
+                    <input class="form-control-sm" asp-for="Clusternumber" /><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Samplescollected">Samplescollected</label>
+                    <select class="form-control-sm" asp-for="Northsouth">
+                        <option value="">---</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                        <option value="unkown">Unknown</option>
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Fieldbookpage">Fieldbookpage</label>
+                    <input class="form-control-sm" asp-for="Fieldbookpage" /><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Preservation">Preservation</label>
+                    <select class="form-control-sm" asp-for="Preservation">
+                            <option value="">---</option>
+                            <option value="B">Bones</option>
+                            <option value="O">Other</option>
+                            <option value="S">Skeleton</option>
+                            <option value="Skull">Skull Only</option>
+                            <option value="W">Wrapped</option>
+                            <option value="BS">Bones and Skull</option>
+                            <option value="Det">Deteriorated</option>
+                            <option value="Dis">Disturbed</option>
+                            <option value="F">Fair</option>
+                            <option value="G">Good</option>
+                            <option value="HDS">Headless Skeleton</option>
+                            <option value="P">Poor</option>
+                            <option value="PP">Poorly Preserved</option>
+                            <option value="VD">Very Disturbed</option>
+                            <option value="WBS">Wrapped, Bones Showing</option>
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Squarenorthsouth">Squarenorthsouth</label>
+                    <input class="form-control-sm" asp-for="Squarenorthsouth" type="number"/><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Northsouth">Northsouth</label>
+                    <select class="form-control-sm" asp-for="Northsouth">
+                        <option value="">---</option>
+                        <option value="N">North</option>
+                        <option value="S">South</option>
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Squareeastwest">Squareeastwest</label>
+                    <input class="form-control-sm" asp-for="Squareeastwest" type="number"/><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Eastwest">Eastwest</label>
+                    <select class="form-control-sm" asp-for="Eastwest">
+                        <option value="">---</option>
+                        <option value="E">East</option>
+                        <option value="W">West</option>
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Area">Area</label>
+                    <select class="form-control-sm" asp-for="Area">
+                        <option value="">---</option>
+                        <option value="NW">NW</option>
+                        <option value="NE">NE</option>
+                        <option value="NNW">NNW</option>
+                        <option value="SE">SE</option>
+                        <option value="SW">SW</option>
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Burialnumber">Burialnumber</label>
+                    <input class="form-control-sm" asp-for="Burialnumber" type="number"/><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Sex">Sex</label>
+                    <select class="form-control-sm" asp-for="Sex">
+                            <option value="">---</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                            <option value="U">Unknown</option>
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Depth">Depth</label>
+                    <input class="form-control-sm" asp-for="Depth" type="number"/><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Ageatdeath">Ageatdeath</label>
+                    <select class="form-control-sm" asp-for="Ageatdeath">
+                            <option value="">---</option>
+                            <option value="A">Adult</option>
+                            <option value="C">Child</option>
+                            <option value="I">Infant (1-3 years)</option>
+                            <option value="N">Newborn (0-1 year)</option>
+                            <option value="U">Unknown</option>
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Headdirection">Headdirection</label>
+                    <select class="form-control-sm" asp-for="Headdirection">
+                            <option value="">---</option>
+                            <option value="E">East</option>
+                            <option value="W">West</option>
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Haircolor">Haircolor</label>
+                    <select class="form-control-sm" asp-for="Haircolor">
+                            <option value="">---</option>
+                            <option value="B">Brown/Dark Brown/Lt Brown</option>
+                            <option value="K">Black</option>
+                            <option value="A">Brown-Red</option>
+                            <option value="R">Red/Red-Bl</option>
+                            <option value="D">Blonde</option>
+                            <option value="U">Unknown</option>
+                    </select><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Structurefunction">Structurefunction</label>
+                    <input class="form-control-sm" asp-for="Structurefunction" /><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Description">Description</label>
+                    <input class="form-control-sm" asp-for="Description" /><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Color">Color</label>
+                    <input class="form-control-sm" asp-for="Color" /><br />
+                </div>
+                <div class="form-group my-3">
+                    <label asp-for="Textilefunction">Textilefunction</label>
+                    <input class="form-control-sm" asp-for="Textilefunction" /><br />
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+
+            </form>
+        }
+        else
+        {
+            <h3>Log in to be able to add Burial Records!</h3>
+        }
+    </div>
+</main>

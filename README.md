@@ -1,0 +1,1 @@
+Winter 2023 I completed this project with a team where we had 4 days to complete a fully functional website. This webpage combined React and Python to create a website that would input data about Mummy burials and through data analytics it was able to predict the state that the mummys were in.

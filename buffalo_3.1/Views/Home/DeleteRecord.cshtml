@@ -1,0 +1,33 @@
+﻿@{      ViewData["Title"] = "Delete";
+}
+
+@model Master
+
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center background-1">
+        <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+
+        </div>
+    </div><!-- End Breadcrumbs -->
+
+    <div class="container m-3">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <h2>Delete Records</h2>
+            <h3>Are you sure you want to delete this record?</h3>
+
+            <form method="post" asp-controller="Home" asp-action="DeleteRecord">
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <a asp-controller="Home" asp-action="Burial_Details" asp-route-burialId="@Model.Masterid" class="btn btn-primary">Cancel</a>
+
+                <input type="hidden" asp-for="Masterid" />
+            </form>
+        }
+        else
+        {
+            <h3>Log in to be able to Delete Burial Records!</h3>
+        }
+    </div>
+</main>

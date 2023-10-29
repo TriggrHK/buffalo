@@ -1,0 +1,23 @@
+﻿.background-1 {
+    background-image: url(/img/background/ancient-egyptian-tombs.jpg);
+}
+.background-2 {
+    background-image: url(/img/background/gettyimages.jpeg);
+}
+.background-3 {
+    background-image: url(/img/background/ancient-egyptian-tombs-found-archaeologists.webp);
+}
+
+#cookieConsent {
+    position: absolute;
+    top: 25px;
+    right: 50px;
+}
+
+#validation ul{
+    list-style: none;
+}
+
+.pinky{
+    background-color: pink;
+}

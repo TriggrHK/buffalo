@@ -1,0 +1,92 @@
+﻿<!-- This was made for Winter INTEX 2023 by Team 1-2
+     Group Members: Trevor Heath, Maryanne Atkinson,
+                    Ben Daley, David Hunter
+-->
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<!-- ======= Carousel of Images Section ======= -->
+<section id="hero" class="hero">
+    <div class="info d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                  
+                    <h2 data-aos="fade-down" class="m-lg-3">Fag el-Gamous Burial Site and Seila Pyramid</h2>
+                    <p data-aos="fade-up">Fag el-Gamous (which means Way of the Water Buffalo) is a large and important cemetery in Egypt that has been under archeological investigation (primarily by BYU researchers) for over 25 years. The excavation has garnered international attention because of the interesting insights gained by studying the Fag el-Gamous mummies.</p>
+                    <a data-aos="fade-up" data-aos-delay="200" asp-controller="Home" asp-action="Burials" class="btn-get-started">View Burial Information</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+        <div class="carousel-item active background-1"></div>
+        <div class="carousel-item background-2"></div>
+        <div class="carousel-item background-3"></div>
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+    </div>
+
+</section><!-- End Hero Section -->
+
+<main id="main">
+
+    <!-- ======= Website Background Section ======= -->
+    <section id="alt-services" class="alt-services">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row justify-content-around gy-4">
+                <div class="col-lg-6 img-bg background-3" data-aos="zoom-in" data-aos-delay="100"></div>
+
+                <div class="col-lg-5 d-flex flex-column justify-content-center">
+                    <h3>Purpose of this Website</h3>
+                    <p>Provide the "Fag el-Gamous" Project a way to better understand the historical burials sites discovered.</p>
+
+                    <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+                        <i class="bi bi-easel flex-shrink-0"></i>
+                        <div>
+                            <h4><a asp-controller="Home" asp-action="Unsupervised" class="stretched-link">Visualizations</a></h4>
+                            <p>Displays visualizations that provide more info on burial sites already unearthed.</p>
+                        </div>
+                    </div><!-- End Icon Box -->
+                    <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
+                        <i class="bi bi-patch-check flex-shrink-0"></i>
+                        <div>
+                            <h4><a asp-controller="Home" asp-action="Supervised" class="stretched-link">Predictions</a></h4>
+                            <p>Allow for users to to enter burial info and receive predictions on variable outcomes.</p>
+                        </div>
+                    </div><!-- End Icon Box -->
+
+                    <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+                        <i class="bi bi-brightness-high flex-shrink-0"></i>
+                        <div>
+                            <h4><a asp-controller="Home" asp-action="Burials" class="stretched-link">Filtering</a></h4>
+                            <p>Allow for filtering of burial sites to manually understand clustering of information.</p>
+                        </div>
+                    </div><!-- End Icon Box -->
+
+                    <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+                        <i class="bi bi-brightness-high flex-shrink-0"></i>
+                        <div>
+                            <h4><a asp-controller="Home" asp-action="Burials" class="stretched-link">Adjustable</a></h4>
+                            <p>Authorized users are capable of adding, editing, and deleting entries in the database</p>
+                        </div>
+                    </div><!-- End Icon Box -->
+
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Alt Services Section -->
+
+
+</main><!-- End #main -->

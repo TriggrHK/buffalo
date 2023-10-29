@@ -1,0 +1,31 @@
+﻿@{
+}
+
+@model IEnumerable<string>
+<div class="accordion-item mt-2">
+    <h2 class="accordion-header" id="heading8">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
+            <h5>Samples Collected</h5>
+            <i class="bi bi-chevron-down mx-auto"></i>
+        </button>
+    </h2>
+    <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#accordionExample">
+        <div class="accordion-body d-grid gap-2">
+            @foreach (string t in Model)
+            {
+                <a asp-controller="Home" asp-action="Burials" asp-route-SamplesFilter="@t" asp-route-pageNum="1"
+                   class="btn @(ViewBag.SelectedSamples == t ? "btn-primary" : "btn-outline-secondary")">@t</a>
+            }
+        </div>
+    </div>
+</div>
+
+
+@*<div class="gap-2 mt-2">
+    <h3>Samples Collected</h3>
+    @foreach (string t in Model)
+    {
+        <a asp-controller="Home" asp-action="Burials" asp-route-SamplesFilter="@t" asp-route-pageNum="1"
+           class="btn @(ViewBag.SelectedSamples == t ? "btn-primary" : "btn-outline-secondary")">@t</a>
+    }
+</div>*@

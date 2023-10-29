@@ -1,0 +1,129 @@
+﻿@{
+    ViewData["Title"] = "Supervised";
+}
+@model SupervisedModel
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center background-1">
+        <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+            <h2>Supervised Analysis</h2>
+            <ol>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li>Supervised</li>
+            </ol>
+
+        </div>
+    </div><!-- End Breadcrumbs -->
+
+    <section class="sample-page">
+        <div class="container">
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 text-center">
+                        <h3>Fill out the fields</h3>
+                        <h4>Determine if the individual found was fully wrapped (W), half-wrapped (H), or bones (B)</h4>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="predictionResult" class="alert alert-info alert-dismissible fade">
+            </div>
+
+            <div>
+                <!-- This is a form for submitting value to the Onxx file, declared in site.js -->
+                <form id="onnxForm">
+
+                    <div class="form-group my-3">
+                        <label class="form-label" asp-for="squarenorthsouth">Squarenorthsouth</label>
+                        <input class="form-control-sm" asp-for="squarenorthsouth" value=0 />
+                    </div>
+                    <div class="form-group my-3">
+                        <label class="form-label" asp-for="headdirection">Headdirection</label>
+                        <select class="form-control-sm" asp-for="headdirection">
+                            <option value="E">East</option>
+                            <option value="W">West</option>
+                        </select>
+                    </div>
+                    <div class="form-group my-3">
+                        <label class="form-label" asp-for="sex">Sex</label>
+                        <select class="form-control-sm" asp-for="sex">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group my-3">
+                        <label class="form-label" asp-for="northsouth">Northsouth</label>
+                        <select class="form-control-sm" asp-for="northsouth">
+                            <option value="N">North</option>
+                            <option value="S">South</option>
+                        </select>
+                    </div>
+                    <div class="form-group my-3">
+                        <label class="form-label" asp-for="eastwest">Eastwest</label>
+                        <select class="form-control-sm" asp-for="eastwest">
+                            <option value="E">East</option>
+                            <option value="W">West</option>
+                        </select>
+                    </div>
+                    <div class="form-group my-3">
+                        <label class="form-label" asp-for="adultsubadult">Adultsubadult</label>
+                        <select class="form-control-sm" asp-for="adultsubadult">
+                            <option value="A">Adult</option>
+                            <option value="C">Child</option>
+                        </select>
+                    </div>
+                    <div class="form-group my-3">
+                        <label class="form-label" asp-for="preservation">Preservation</label>
+                        <select class="form-control-sm" asp-for="preservation">
+                            <option value="B">Bones</option>
+                            <option value="O">Other</option>
+                            <option value="S">Skeleton</option>
+                            <option value="Skull">Skull Only</option>
+                            <option value="W">Wrapped</option>
+                            <option value="BS">Bones and Skull</option>
+                            <option value="Det">Deteriorated</option>
+                            <option value="Dis">Disturbed</option>
+                            <option value="F">Fair</option>
+                            <option value="G">Good</option>
+                            <option value="HDS">Headless Skeleton</option>
+                            <option value="P">Poor</option>
+                            <option value="PP">Poorly Preserved</option>
+                            <option value="VD">Very Disturbed</option>
+                            <option value="WBS">Wrapped, Bones Showing</option>
+                        </select>
+                    </div>
+                    <div class="form-group my-3">
+                        <label class="form-label" asp-for="squareeastwest">Squareeastwest</label>
+                        <input class="form-control-sm" asp-for="squareeastwest" value=0 />
+                    </div>
+                    <div class="form-group my-3">
+                        <label class="form-label" asp-for="area">Area</label>
+                        <select class="form-control-sm" asp-for="area">
+                            <option value="NW">NW</option>
+                            <option value="NE">NE</option>
+                            <option value="NNW">NNW</option>
+                            <option value="SE">SE</option>
+                            <option value="SW">SW</option>
+                        </select>
+                    </div>
+                    <div class="form-group my-3">
+                        <label class="form-label" asp-for="ageatdeath">Age at Death</label>
+                        <select class="form-control-sm" asp-for="ageatdeath">
+                            <option value="A">Adult</option>
+                            <option value="C">Child</option>
+                            <option value="I">Infant (1-3 years)</option>
+                            <option value="N">New Born (0-1 year)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-success m-3">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

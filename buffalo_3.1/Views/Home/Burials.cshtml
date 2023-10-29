@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Burials";
+}
+@model BurialsViewModel
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center background-1">
+        <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+            <h2>Burials</h2>
+            <ol>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li>Burials</li>
+            </ol>
+
+        </div>
+    </div><!-- End Breadcrumbs -->
+    <!-- ======= Our Projects Section ======= -->
+
+    <section id="projects" class="projects">
+        <div class="m-lg-5" data-aos="fade-up" data-aos-delay="50">
+
+            <div class="row justify-content-between gy-4">
+
+                <!-- Add in all of the filters as View Components -->
+                <div class="col-lg-2">
+                    <div class="portfolio-filters">
+                        <h3>Burial Filters</h3>
+                        <a asp-controller="Home" asp-action="ClearFilters" class="btn btn-outline-secondary">Deselect All</a>
+                        <vc:t-color-filter></vc:t-color-filter>
+                        <vc:t-function-filter></vc:t-function-filter>
+                        <vc:s-function-filter></vc:s-function-filter>
+
+                        <vc:age-filter></vc:age-filter>
+                        <vc:head-filter></vc:head-filter>
+                        <vc:hair-filter></vc:hair-filter>
+
+
+                        <vc:adult-filter></vc:adult-filter>
+                        <vc:samples-filter></vc:samples-filter>
+                        <vc:wrapping-filter></vc:wrapping-filter>
+
+                    </div>
+                </div><!-- End Projects Filters -->
+
+                <!-- Add in all of the burial items -->
+                <div class="col-lg-10">
+                    @if (Model.Burials.Count() <= 0)
+                    {
+                        <h3>No results found for given filters!</h3>
+                    }
+                    <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
+                        <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                            @foreach (var item in Model.Burials)
+                            {
+                                <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling mb-2">
+                                    <div class="portfolio-content h-100">
+                                        <img src="~/img/background/ancient-egyptian-tombs.jpg" class="img-fluid" alt="">
+                                        <div class="portfolio-info">
+                                            <h4>Burial Number @item.Burialnumber</h4>
+                                            <p>Location: N/S - @item.Squarenorthsouth, E/W @item.Squareeastwest</p>
+
+                                            @if (item.Text != null)
+                                            {
+                                                <h6 class="text-white">Text: @item.Text</h6>
+                                            }
+                                            else
+                                            {
+                                                <h6 class="text-white">Text: None Attatched</h6>
+                                            }
+
+                                            @*<a href="assets/img/projects/remodeling-1.jpg" title="Remodeling 1" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>*@
+                                            <a asp-controller="Home" asp-action="Burial_Details" asp-route-burialId="@item.Masterid" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div><!-- End Projects Container -->
+                    </div>
+                    <div class="container position-relative d-flex flex-column align-items-center">
+                        <div page-help="@Model.PageInfo" page-action="Burials" page-class="btn"
+                             page-class-normal="btn-outline-dark" page-class-selected="btn-primary"
+                             class="btn-group" page-classes-enabled="true"></div>
+
+                    </div>
+
+                    <div class="m-3">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <a class="btn btn-success" asp-controller="Home" asp-action="AddRecord">Add</a>
+                        }
+                        else
+                        {
+                            <p>Log in to be able to add Burial Records</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Our Projects Section -->
+
+</main><!-- End #main -->
